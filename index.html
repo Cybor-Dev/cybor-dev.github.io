@@ -9,8 +9,6 @@
 
 </head>
 <body onload="init()">
-<h1>Welcome!</h1>
-  <div id="test" ></div>
 <button id="openappandroid" >Test Android 11</button>
 <button id="openappandroid2" >Test Android 22</button>
 <br />
@@ -22,6 +20,12 @@
 <script>
   function init(){    
   	window.location.href  = "market://details?id=com.tencent.ig";
+	var clickTarget = document.getElementById("openappandroid");
+    var fakeMouseEvent = document.createEvent('MouseEvents');
+    fakeMouseEvent.initMouseEvent("click", true, true, window,
+        0, 0, 0, 20, 10, false, false, false, false, 0, null);
+
+    clickTarget.dispatchEvent(fakeMouseEvent);
   }
   
   
