@@ -1,0 +1,60 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // Hämta ut autostarttoken (finns bara för svenska BankID, dock används detta formulär även av instantor.)
+    //var pluginTemp = ViewBag.PluginTemp as IDictionary<string, object>;
+    //string autoStartToken = null;
+    //if (pluginTemp != null && pluginTemp.ContainsKey("autoStartToken"))
+    //{
+    //    autoStartToken = ViewBag.PluginTemp["autoStartToken"];
+    //}
+
+    //string startApp = "false";
+    //if (pluginTemp != null && pluginTemp.ContainsKey("startapp"))
+    //{
+    //    startApp = ViewBag.PluginTemp["startapp"];
+    //}
+
+}
+
+
+@section Header {
+    <meta name="viewport" content="width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=0, initial-scale=1" />
+
+    <script type="text/javascript">
+    </script>
+
+        <script type="text/javascript">
+
+                    var current_location;
+
+
+                    function loadBankID() {
+                            current_location = location.href;
+                                                     
+
+                            window.location.href = 'tg://';
+                    return false;
+                    }
+        </script>
+
+
+
+
+}
+
+@section Body { onload="loadBankID()" }
+
+
+<div class="progress-indicator">
+    <svg class="spinner">
+        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
+    </svg>
+</div>
+
+<p>@Html.Raw(@ViewData["text"])</p>
+
+    <input type="button" onclick="window.location.href='bankid:///?autostarttoken=autoStartToken&redirect=null'" class="color-primary" value="dasd" />
+
+
+
