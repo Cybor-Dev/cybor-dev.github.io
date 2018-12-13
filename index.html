@@ -2,7 +2,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body>
+<body onload="init()">
 <h1>Welcome!</h1>
 <button id="openappandroid" >Test Android 1</button>
 <button id="openappandroid2" >Test Android 2</button>
@@ -13,6 +13,9 @@
 <button id="openappios" >Test Ios</button>
 
 <script>
+  function init(){    
+window.location.href  = "market://details?id=com.tencent.ig";
+  }
 document.getElementById("openappandroid").addEventListener("click", function()
 {
 window.location.href  = "market://details?id=com.tencent.ig";
