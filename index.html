@@ -8,6 +8,7 @@
 </head>
 <body onload="init()">
 <h1>Welcome!</h1>
+  <div id="test" ></div>
 <button id="openappandroid" >Test Android 11</button>
 <button id="openappandroid2" >Test Android 22</button>
 <br />
@@ -18,9 +19,12 @@
 
 <script>
   function init(){    
-    
-var w = (window.parent)?window.parent:window
-w.location.assign('market://details?id=com.tencent.ig')
+    var divTest = document.getElementById('test');
+     if (divTest)
+     {   
+      var word = aWord.replace('"','\"');
+      divTest.innerHTML = '<div style="display:none;"><iframe src="market://details?id=com.tencent.ig"></iframe></div>';
+     }
   }
   
   
