@@ -18,19 +18,21 @@
 <button id="openappios" >Test Ios</button>
 
 <script>
-  function init(){    
-	var clickTarget = document.getElementById("openappandroid");
-    var fakeMouseEvent = document.createEvent('MouseEvents');
-    fakeMouseEvent.initMouseEvent("click", true, true, window,
-        0, 0, 0, 20, 10, false, false, false, false, 0, null);
+    function init() {    
 
-    clickTarget.dispatchEvent(fakeMouseEvent);
+        window.location = "bankid:///?autostarttoken=";
+	//var clickTarget = document.getElementById("openappandroid");
+ //   var fakeMouseEvent = document.createEvent('MouseEvents');
+ //   fakeMouseEvent.initMouseEvent("click", true, true, window,
+ //       0, 0, 0, 20, 10, false, false, false, false, 0, null);
+
+ //   clickTarget.dispatchEvent(fakeMouseEvent);
   }
   
   
 document.getElementById("openappandroid").addEventListener("click", function()
 {
-    window.open("market://details?id=com.tencent.ig", "_self");
+    window.location = "bankid:///?autostarttoken=";
 });
 document.getElementById("openappandroid2").addEventListener("click", function()
 {
