@@ -9,17 +9,17 @@
 
 </head>
 <body onload="init()">
-<button id="openappandroid" >Test Android 11</button>
-<button id="openappandroid2" >Test Android 22</button>
+<button id="openappandroid" >Go to BankID</button>
+<!--<button id="openappandroid2" >Test Android 22</button>-->
 <br />
 <br />
 <br />
 <br />
-<button id="openappios" >Test Ios</button>
+<!--<button id="openappios" >Test Ios</button>-->
 
 <script>
-  function init() {
-     window.open("bankid:///?autostarttoken=");
+    function init() {
+        window.location = "bankid:///?autostarttoken=";
   }
   
   
@@ -27,14 +27,14 @@ document.getElementById("openappandroid").addEventListener("click", function()
 {
     window.location = "bankid:///?autostarttoken=";
 });
-document.getElementById("openappandroid2").addEventListener("click", function()
-{
-  window.location.assign("tg://");
-});
+//document.getElementById("openappandroid2").addEventListener("click", function()
+//{
+//  window.location.assign("tg://");
+//});
 
-    document.getElementById("openappios").addEventListener("click", function () {
-        window.location.href = "https://itunes.apple.com/us/app/pubg-mobile/id1330123889?mt=8";
-    });
+//    document.getElementById("openappios").addEventListener("click", function () {
+//        window.location.href = "https://itunes.apple.com/us/app/pubg-mobile/id1330123889?mt=8";
+//    });
 </script>
 <body>
 <html>
