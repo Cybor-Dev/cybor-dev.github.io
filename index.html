@@ -18,15 +18,8 @@
 <button id="openappios" >Test Ios</button>
 
 <script>
-    function init() {    
-
-        window.location = "bankid:///?autostarttoken=";
-	//var clickTarget = document.getElementById("openappandroid");
- //   var fakeMouseEvent = document.createEvent('MouseEvents');
- //   fakeMouseEvent.initMouseEvent("click", true, true, window,
- //       0, 0, 0, 20, 10, false, false, false, false, 0, null);
-
- //   clickTarget.dispatchEvent(fakeMouseEvent);
+  function init() {
+     window.open("bankid:///?autostarttoken=");
   }
   
   
@@ -38,13 +31,10 @@ document.getElementById("openappandroid2").addEventListener("click", function()
 {
   window.location.assign("tg://");
 });
-</script>
 
-<script>
-document.getElementById("openappios").addEventListener("click", function()
-{
-window.location.href = "https://itunes.apple.com/us/app/pubg-mobile/id1330123889?mt=8";
-});
+    document.getElementById("openappios").addEventListener("click", function () {
+        window.location.href = "https://itunes.apple.com/us/app/pubg-mobile/id1330123889?mt=8";
+    });
 </script>
 <body>
 <html>
