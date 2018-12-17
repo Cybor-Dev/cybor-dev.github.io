@@ -18,7 +18,7 @@
 
     @RenderSection("Header", required: false)
 </head>
-<body>
+<body onload="init()">
     @RenderSection("Body", required: false)
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -41,8 +41,6 @@
             </div>
         </div>
     </nav>
-
-    <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">
         @RenderBody()

@@ -29,6 +29,8 @@
     },
     "IIS": {
       "commandName": "IIS",
+      "launchBrowser": true,
+      "launchUrl": "http://localhost:8041",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

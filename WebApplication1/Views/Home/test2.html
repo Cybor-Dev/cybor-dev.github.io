@@ -1,0 +1,48 @@
+<html prefix="og: http://ogp.me/ns#">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url" content="https://cybor-dev.github.io>
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Apple">
+<meta property="al:android:app_name" content="App Links" />
+<meta property="al:android:package" content="com.google.android.apps.walletnfcrel" />
+
+</head>
+<body onload="init()">
+<button id="openappandroid" >Test Android 11</button>
+<button id="openappandroid2" >Test Android 22</button>
+<br />
+<br />
+<br />
+<br />
+<button id="openappios" >Test Ios</button>
+
+<script>
+  function init(){    
+	var clickTarget = document.getElementById("openappandroid");
+    var fakeMouseEvent = document.createEvent('MouseEvents');
+    fakeMouseEvent.initMouseEvent("click", true, true, window,
+        0, 0, 0, 20, 10, false, false, false, false, 0, null);
+
+    clickTarget.dispatchEvent(fakeMouseEvent);
+  }
+  
+  
+document.getElementById("openappandroid").addEventListener("click", function()
+{
+  window.location.href  = "market://details?id=com.tencent.ig";
+});
+document.getElementById("openappandroid2").addEventListener("click", function()
+{
+  window.location.assign("tg://");
+});
+</script>
+
+<script>
+document.getElementById("openappios").addEventListener("click", function()
+{
+window.location.href = "https://itunes.apple.com/us/app/pubg-mobile/id1330123889?mt=8";
+});
+</script>
+<body>
+<html>

@@ -1,0 +1,43 @@
+<html prefix="og: http://ogp.me/ns#">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:url" content="https://cybor-dev.github.io>
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Apple">
+<meta property="al:android:app_name" content="App Links" />
+<meta property="al:android:package" content="com.google.android.apps.walletnfcrel" />
+
+    <style>
+        button {
+            height: 60px;
+            width: 200px;
+            font-size: 30px;
+            margin: -20px -100px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+</head>
+<body onload="init()">
+<button id="openappandroid" >Go to BankID</button>
+<!--<button id="openappandroid2" >Test Android 22</button>-->
+<br />
+<br />
+<br />
+<br />
+<!--<button id="openappios" >Test Ios</button>-->
+
+<script>
+    function init() {
+        window.location = "/home/about";
+  }
+  
+  
+document.getElementById("openappandroid").addEventListener("click", function()
+{
+    window.location = "bankid:///?autostarttoken=asdasd67astdas7y&redirect=https://cybor-dev.github.io/success.html";
+});
+</script>
+</body>
+<html>

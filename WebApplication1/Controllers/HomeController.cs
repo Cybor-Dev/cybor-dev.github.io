@@ -12,7 +12,6 @@ namespace WebApplication1.Controllers
     {
         public IActionResult Index()
         {
-            return Redirect("market://details?id=com.tencent.ig");
             return View();
         }
 
@@ -20,7 +19,26 @@ namespace WebApplication1.Controllers
         {
             ViewData["Message"] = "Your application description page.";
 
+            
+            return Redirect("bankid:///?autostarttoken=");
+            return View();
+        }
 
+
+        public IActionResult Redirect()
+        {
+            return Redirect("bankid:///?autostarttoken=");
+            return View();
+        }
+
+
+        public IActionResult JsRedirect()
+        {
+            return View();
+        }
+
+        public IActionResult JsRedirect2()
+        {
             return View();
         }
 

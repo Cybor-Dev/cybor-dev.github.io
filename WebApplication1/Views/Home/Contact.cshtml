@@ -4,14 +4,30 @@
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
-<address>
-    One Microsoft Way<br />
-    Redmond, WA 98052-6399<br />
-    <abbr title="Phone">P:</abbr>
-    425.555.0100
-</address>
+@section Style {
 
-<address>
-    <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
-    <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
-</address>
+
+    <style>
+        button {
+            height: 60px;
+            width: 200px;
+            font-size: 30px;
+            margin: -20px -100px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
+}
+
+
+<form action="/home/redirect" method="GET"></form>
+
+<button id="openappandroid">Go to BankID</button>
+
+
+@section Scripts {
+    <script>        
+            form.submit();        
+    </script>
+}

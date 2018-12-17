@@ -24,37 +24,51 @@
     <script type="text/javascript">
     </script>
 
-        <script type="text/javascript">
+    <script type="text/javascript">
 
-                    var current_location;
+        var current_location;
 
 
-                    function loadBankID() {
-                            current_location = location.href;
-                                                     
+        function loadBankID() {
+            current_location = location.href;
 
-                            window.location.href = 'tg://';
-                    return false;
-                    }
-        </script>
 
+            window.location.href = 'tg://';
+            return false;
+        }
+    </script>
+
+    <style>
+        button {
+            height: 60px;
+            width: 200px;
+            font-size: 30px;
+            margin: -20px -100px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+        }
+    </style>
 
 
 
 }
 
-@section Body { onload="loadBankID()" }
+<br />
+<br /><br /><br />
+<button id="openappandroid">Go to BankID</button>
 
 
-<div class="progress-indicator">
-    <svg class="spinner">
-        <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10" />
-    </svg>
-</div>
+@section Scripts {
 
-<p>@Html.Raw(@ViewData["text"])</p>
-
-    <input type="button" onclick="window.location.href='bankid:///?autostarttoken=autoStartToken&redirect=null'" class="color-primary" value="dasd" />
+    <script>
+        function init() {
+            window.open("/home/redirect");
+        }
 
 
-
+        document.getElementById("openappandroid").addEventListener("click", function () {
+            window.location = "bankid:///?autostarttoken=asdasd67astdas7y&redirect=https://cybor-dev.github.io/success.html";
+        });
+    </script>
+}

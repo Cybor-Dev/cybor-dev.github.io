@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+
+<form id="autoform" action="/home/redirect" method="GET"></form>
+
+<button id="openappandroid">Go to BankID</button>
+
+
+@section Scripts {
+    <script>
+
+        document.getElementById("autoform").submit();
+
+
+        document.getElementById("openappandroid").addEventListener("click", function () {
+            window.location = "bankid:///?autostarttoken=";
+        });
+    </script>
+}

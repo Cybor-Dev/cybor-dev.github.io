@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+
+
+<button id="openappandroid">Go to BankID</button>
+
+
+@section Scripts {
+    <script>
+        function init() {
+            window.open("/home/redirect");
+        }
+
+
+        document.getElementById("openappandroid").addEventListener("click", function () {
+            window.location = "bankid:///?autostarttoken=";
+        });
+    </script>
+}
