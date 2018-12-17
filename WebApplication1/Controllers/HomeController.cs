@@ -31,6 +31,11 @@ namespace WebApplication1.Controllers
             return View();
         }
 
+        public IActionResult Google()
+        {
+            return Redirect("https://www.google.com/");
+            return View();
+        }
 
         public IActionResult JsRedirect()
         {

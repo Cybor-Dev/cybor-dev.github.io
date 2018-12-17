@@ -7,6 +7,8 @@
 
 <form id="autoform" action="/home/redirect" method="GET"></form>
 
+<form id="redirect-to-customer-site" action="/home/google" method="GET"></form>
+
 <button id="openappandroid">Go to BankID</button>
 
 
@@ -19,5 +21,11 @@
         document.getElementById("openappandroid").addEventListener("click", function () {
             window.location = "bankid:///?autostarttoken=";
         });
+
+
+        window.addEventListener("focus", function (event) {
+            document.getElementById("redirect-to-customer-site").submit();
+        }, false);        
+
     </script>
 }
