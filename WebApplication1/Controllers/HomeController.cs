@@ -20,14 +20,14 @@ namespace WebApplication1.Controllers
             ViewData["Message"] = "Your application description page.";
 
             
-            return Redirect("bankid:///?autostarttoken=");
+            return Redirect("bankid:///?autostarttoken=00000000-0000-0000-0000-000000000000&redirect=null");
             return View();
         }
 
-
+        [HttpPost]
         public IActionResult Redirect()
         {
-            return Redirect("bankid:///?autostarttoken=");
+            return Redirect("bankid:///?autostarttoken=00000000-0000-0000-0000-000000000000&redirect=null");
             return View();
         }
 

@@ -5,11 +5,15 @@
 <h3>@ViewData["Message"]</h3>
 
 
-<form id="autoform" action="/home/redirect" method="GET"></form>
+<form id="autoform" action="/home/redirect" method="POST" ></form>
 
 <form id="redirect-to-customer-site" action="/home/google" method="GET"></form>
 
+<div id="iframediv"></div>
+
 <button id="openappandroid">Go to BankID</button>
+
+<span id="ios"></span>
 
 
 @section Scripts {
@@ -17,15 +21,57 @@
 
         document.getElementById("autoform").submit();
 
+        ///ios
+        var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+        if (iOS) {
+            document.getElementById("ios").innerText = "This is ios";
+            setTimeout(() => {
+
+                document.getElementById("ios").innerText = document.getElementById("ios").innerText + " redirect to website,";
+                //document.getElementById("redirect-to-customer-site").submit();
+                document.getElementById("iframediv").innerHTML = "<iframe src='https://test-bankid-redirect2018.azurewebsites.net/home/privacy'></iframe>";
+            }, 1000);
+        }
+
+
+
 
         document.getElementById("openappandroid").addEventListener("click", function () {
             window.location = "bankid:///?autostarttoken=";
         });
 
 
-        window.addEventListener("focus", function (event) {
-            document.getElementById("redirect-to-customer-site").submit();
-        }, false);        
+        setTimeout(() => {
+            window.addEventListener("focus", function (event) {
+                document.getElementById("ios").innerText = document.getElementById("ios").innerText + " focus,";
+                //document.getElementById("redirect-to-customer-site").submit();
+            }, false);
+        }, 100)
 
+
+        window.addEventListener("onfocusout", function (event) {
+            document.getElementById("ios").innerText = document.getElementById("ios").innerText + " onfocusout,";
+        }, false);
+
+
+        window.addEventListener("onblur", function (event) {
+            document.getElementById("ios").innerText = document.getElementById("ios").innerText + " onblur,";
+        }, false);
+
+        window.addEventListener("pagehide", function (event) {
+            document.getElementById("ios").innerText = document.getElementById("ios").innerText + " pagehide,";
+        }, false);
+
+
+
+        window.addEventListener("pageshow", function (event) {
+            document.getElementById("ios").innerText = document.getElementById("ios").innerText + " pageshow,";
+        }, false);
+
+
+
+        window.addEventListener("focus", function (event) {
+            document.getElementById("ios").innerText = document.getElementById("ios").innerText + " focus,";
+        }, false);
     </script>
 }
