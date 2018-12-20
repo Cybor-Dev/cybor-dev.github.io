@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<p>Use this area to provide additional information.</p>
+
+<span id="event_response"></span>
+
+@section Scripts {
+    <script>
+
+        console.log('message configured');
+        window.addEventListener("message", receiveMessage, false);
+
+        function receiveMessage(event) {
+            var response = event.data;
+            document.getElementById('event_response').innerText = "Javascript Event Response: " + response;
+        }
+    </script>
+}
