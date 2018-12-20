@@ -29,6 +29,12 @@ namespace Redirect3.Controllers
             return View();
         }
 
+        public IActionResult FrameContent()
+        {
+            return View();
+        }
+        
+
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";

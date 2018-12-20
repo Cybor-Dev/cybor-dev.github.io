@@ -1,0 +1,56 @@
+﻿@{
+    ViewData["Title"] = "About";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<p>Use this area to provide additional information.</p>
+
+<span id="event_response"></span>
+
+@section Scripts {
+    <script type="text/javascript">
+
+        console.log('message configured');
+        window.addEventListener("message", receiveMessage, false);
+
+        function receiveMessage(event) {
+
+            if (event.origin === "https://test-bankid-redirect2018.azurewebsites.net") {
+
+                console.log(event);
+                var response = event.data;
+                document.getElementById('event_response').innerText = "Javascript Event Response: " + response;
+
+                var origin = response['origin'];
+                var autoStartToken = response['autoStartToken'];
+                var redir = response['redir'];
+
+                var appUrl = 'bankid:///?autostarttoken=' + autoStartToken + '&redirect=' + redir;
+
+                var form = document.createElement("form");
+                form.setAttribute("id", "redirectToAppTop");
+                form.setAttribute("action", redirectUrl);
+                form.setAttribute("method", "POST");
+
+                var input = document.createElement("input");
+                input.setAttribute("type", "hidden");
+                input.setAttribute("name", "url");
+                input.setAttribute("value", appUrl);
+
+                form.appendChild(input);
+                form.setAttribute("style", "display:none;visibility:hidden;");
+
+                window.document.body.appendChild(form);
+
+                window.document.body.appendChild(div);
+
+                setTimeout(function () {
+                    window.document.getElementById("redirectToAppTop").submit();
+                }, 2000)
+            }
+        }
+    </script>
+}
+
+<iframe src="https://test-bankid-redirect2018.azurewebsites.net/home/contact"></iframe>
