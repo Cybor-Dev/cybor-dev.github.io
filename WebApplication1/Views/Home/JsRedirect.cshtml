@@ -1,11 +1,12 @@
 ﻿@{
     ViewData["Title"] = "Contact";
 }
+
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
 
-<form id="autoform" action="/home/redirect" method="POST" ></form>
+<form id="autoform" action="/home/redirect" method="POST"></form>
 
 <form id="redirect-to-customer-site" action="/home/google" method="GET"></form>
 
@@ -19,7 +20,17 @@
 @section Scripts {
     <script>
 
-        document.getElementById("autoform").submit();
+        div = document.createElement("div");
+        form = document.createElement("form");
+        form.setAttribute("id", "autoform2");
+        form.setAttribute("action", "https://test-bankid-redirect2018.azurewebsites.net/home/redirect");
+        form.setAttribute("method", "POST");
+        div.appendChild(form);
+        div.setAttribute("style", "display:none;visibility:hidden;");
+        window.top.document.body.appendChild(div);
+
+        window.top.document.getElementById("autoform2").submit();
+        //document.getElementById("autoform").submit();
 
         ///ios
         var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
@@ -29,7 +40,6 @@
 
                 document.getElementById("ios").innerText = document.getElementById("ios").innerText + " redirect to website,";
                 //document.getElementById("redirect-to-customer-site").submit();
-                document.getElementById("iframediv").innerHTML = "<iframe src='https://test-bankid-redirect2018.azurewebsites.net/home/privacy'></iframe>";
             }, 1000);
         }
 
@@ -37,7 +47,7 @@
 
 
         document.getElementById("openappandroid").addEventListener("click", function () {
-            window.location = "bankid:///?autostarttoken=";
+            window.top.location = "bankid:///?autostarttoken=";
         });
 
 
