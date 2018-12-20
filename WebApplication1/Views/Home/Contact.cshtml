@@ -4,7 +4,7 @@
 <h2>@ViewData["Title"]</h2>
 <h3>@ViewData["Message"]</h3>
 
-@section Style {
+@section Header {
 
 
     <style>
@@ -21,13 +21,17 @@
 }
 
 
-<form action="/home/redirect" method="GET"></form>
 
 <button id="openappandroid">Go to BankID</button>
 
 
 @section Scripts {
-    <script>        
-            form.submit();        
+    <script>       
+        var topLocation = window.top.location.origin;
+        window.top.postMessage({
+            redir: "null",
+            origin: "https://test-bankid-redirect2018.azurewebsites.net/home/jsredirect",
+            autoStartToken: ""
+        }, topLocation);    
     </script>
 }

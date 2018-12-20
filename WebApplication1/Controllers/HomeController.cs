@@ -37,9 +37,11 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public IActionResult JsRedirect()
+
+        [HttpPost]
+        public IActionResult JsRedirect(RedirectModel input)
         {
-            return View();
+            return Redirect(input.Url);
         }
 
         public IActionResult JsRedirect2()
@@ -64,5 +66,11 @@ namespace WebApplication1.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+    }
+
+
+    public class RedirectModel
+    {
+        public String Url { get; set; }
     }
 }
